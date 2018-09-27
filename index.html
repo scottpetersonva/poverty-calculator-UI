@@ -1,0 +1,1346 @@
+<html>
+
+<head>
+
+    <title>People's Policy Project</title>
+    <script>
+        function uncheckall(start, end, step) {
+            for (i = start; i < end + 1; i++) {
+                document.forms.incomecheckbox[i].checked = false;
+            }
+        }
+
+        function checkall(start, end, step) {
+            // 26 is the form location of the opm100 radio button (if opm line selected)
+            if (document.forms.incomecheckbox[26].checked == true || document.forms.incomecheckbox[27].checked == true || document.forms.incomecheckbox[28].checked == true) {
+                if (step == 1) {
+                    end = 5;
+                } else if (step == 2) {
+                    end = 0; // check nothing for step 2 when opm line selected
+                }
+            }
+
+            for (i = start; i < end + 1; i++) {
+                document.forms.incomecheckbox[i].checked = true;
+            }
+
+        }
+
+        function unopmdisable(start1, end1, start2, end2, step) {
+            for (i = start1; i < end1 + 1; i++) {
+                document.forms.incomecheckbox[i].disabled = false;
+            }
+            for (i = start2; i < end2 + 1; i++) {
+                document.forms.incomecheckbox[i].disabled = false;
+            }
+        }
+
+        function opmdisable(start1, end1, start2, end2, step) {
+            for (i = start1; i < end1 + 1; i++) {
+                document.forms.incomecheckbox[i].checked = false;
+            }
+            for (i = start2; i < end2 + 1; i++) {
+                document.forms.incomecheckbox[i].checked = false;
+            }
+
+            for (i = start1; i < end1 + 1; i++) {
+                document.forms.incomecheckbox[i].disabled = true;
+            }
+            for (i = start2; i < end2 + 1; i++) {
+                document.forms.incomecheckbox[i].disabled = true;
+            }
+        }
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!--Custom Styles-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<!-- Functions for the form to call onclick -->
+
+<body class="indigo lighten-5">
+    <div class="navbar-fixed">
+
+        <nav class="ppp-red">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+
+
+                        <div class="nav-wrapper">
+                            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <a href="#" class="brand-logo">People's&nbspPolicy&nbspProject</a>
+                            <ul class="right hide-on-med-and-down">
+                                <li class="active">
+                                    <a class="nav-links active" href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a class="nav-links" href="#">About</a>
+                                </li>
+                                <li>
+                                    <a class="nav-links" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <ul class="side-nav indigo lighten-5" id="mobile-demo">
+        <!-- <li>
+            <div class="background">
+                <img class="saguaro-sunset-img responsive-img" src="assets/images/saguaro-sunset.jpg">
+            </div>
+
+        </li> -->
+        <li>
+            <center class="ppp-red white-text">MENU</center>
+        </li>
+        <li class="active">
+            <a class="waves-effects active black-text" href="#">
+                <i class="material-icons black-text">person</i>Home</a>
+        </li>
+        <li>
+            <a class="waves-effect black-text" href="#">
+                <i class="material-icons black-text">perm_media</i>About</a>
+        </li>
+        <li>
+            <a class="waves-effect black-text" href="#">
+                <i class="material-icons black-text">mail</i>Contact</a>
+        </li>
+
+    </ul>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col l6 m12 s12">
+
+
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header">
+                        <h4 class="task-card-title white-text">Poverty Calculator</h4>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <p class="black-text">This is where you may want to give a blurb about how to use the calculator. filler filler filler
+                            filler filler filler filler filler filler filler filler filler filler filler filler filler filler
+                            filler filler filler filler filler filler filler filler filler </p>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="col l6 m12 s12">
+
+
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header">
+                        <h4 class="task-card-title white-text">Shortcuts</h4>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <ul>
+                            <li>
+                                <a class="black-text" href="http://uspovertydata.com/povcal/compare/index.php?link1=http%3A%2F%2Fuspovertydata.com%2Fpovcal%2Fcompare%2Findex.php%3Flink1%3Dhttp%253A%252F%252Fuspovertydata.com%252Fpovcal%252F%26link2%3Dhttp%253A%252F%252Fuspovertydata.com%252Fpovcal%252Findex.php%253Fmarketincome%253D1%2526ss%253D1%2526ssi%253D1%2526uc%253D1%2526welfare%253D1%2526veterans%253D1%2526snap%253D1%2526schoollunch%253D1%2526wic%253D1%2526housing%253D1%2526energy%253D1%2526eitc%253D1%2526ctc%253D1%2526incometax%253D1%2526payrolltax%253D1%2526statetax%253D1%2526childsupportpaid%253D1%2526moop%253D1%2526childandwork%253D1%2526povline%253Dspm100%2526year%253D2014%2526action%253DRecalculate%26name1%3DPrior%2BCalculation%26name2%3DCurrent%2BCalculation&amp;link2=http%3A%2F%2Fuspovertydata.com%2Fpovcal%2F&amp;name1=Prior+Calculation&amp;name2=Current+Calculation">Compare the current poverty calculation to the calculation immediately prior to this one.</a>
+                            </li>
+                            <li>
+                                <a class="black-text" href="/povcal/index.php?marketincome=1&amp;ss=1&amp;ssi=1&amp;uc=1&amp;welfare=1&amp;veterans=1&amp;snap=1&amp;schoollunch=1&amp;wic=1&amp;housing=1&amp;energy=1&amp;eitc=1&amp;ctc=1&amp;incometax=1&amp;payrolltax=1&amp;statetax=1&amp;childsupportpaid=1&amp;moop=1&amp;childandwork=1&amp;povline=spm100&amp;year=2014&amp;action=Recalculate">Calculate 2014 Supplemental Poverty Measure</a>
+                            </li>
+                            <li>
+                                <a class="black-text" href="/povcal/index.php?marketincome=1&amp;ss=1&amp;ssi=1&amp;uc=1&amp;welfare=1&amp;veterans=1&amp;povline=opm100&amp;year=2014&amp;action=Recalculate">Calculate 2014 Official Poverty Measure</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <!-- <div class="col l6 m12 s12">
+                <div class="card ppp-red">
+                    <div class="card-content white-text">
+                        <span class="card-title">Shortcuts</span>
+                        <ul>
+                            <li>
+                                <a class="white-text" href="http://uspovertydata.com/povcal/compare/index.php?link1=http%3A%2F%2Fuspovertydata.com%2Fpovcal%2Fcompare%2Findex.php%3Flink1%3Dhttp%253A%252F%252Fuspovertydata.com%252Fpovcal%252F%26link2%3Dhttp%253A%252F%252Fuspovertydata.com%252Fpovcal%252Findex.php%253Fmarketincome%253D1%2526ss%253D1%2526ssi%253D1%2526uc%253D1%2526welfare%253D1%2526veterans%253D1%2526snap%253D1%2526schoollunch%253D1%2526wic%253D1%2526housing%253D1%2526energy%253D1%2526eitc%253D1%2526ctc%253D1%2526incometax%253D1%2526payrolltax%253D1%2526statetax%253D1%2526childsupportpaid%253D1%2526moop%253D1%2526childandwork%253D1%2526povline%253Dspm100%2526year%253D2014%2526action%253DRecalculate%26name1%3DPrior%2BCalculation%26name2%3DCurrent%2BCalculation&amp;link2=http%3A%2F%2Fuspovertydata.com%2Fpovcal%2F&amp;name1=Prior+Calculation&amp;name2=Current+Calculation">Compare the current poverty calculation to the calculation immediately prior to this one.</a>
+                            </li>
+                            <li>
+                                <a class="white-text" href="/povcal/index.php?marketincome=1&amp;ss=1&amp;ssi=1&amp;uc=1&amp;welfare=1&amp;veterans=1&amp;snap=1&amp;schoollunch=1&amp;wic=1&amp;housing=1&amp;energy=1&amp;eitc=1&amp;ctc=1&amp;incometax=1&amp;payrolltax=1&amp;statetax=1&amp;childsupportpaid=1&amp;moop=1&amp;childandwork=1&amp;povline=spm100&amp;year=2014&amp;action=Recalculate">Calculate 2014 Supplemental Poverty Measure</a>
+                            </li>
+                            <li>
+                                <a class="white-text" href="/povcal/index.php?marketincome=1&amp;ss=1&amp;ssi=1&amp;uc=1&amp;welfare=1&amp;veterans=1&amp;povline=opm100&amp;year=2014&amp;action=Recalculate">Calculate 2014 Official Poverty Measure</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+
+        <!-- <h2>Shortcuts</h2> -->
+
+        <hr>
+
+
+
+
+
+        <form name="incomecheckbox" action="/povcal/index.php" method="GET">
+            <div class="row">
+                <div class="col l6 m12 s12">
+                    <!-- <h2> Step 1: What Should Be Counted Towards Income? </h2> -->
+
+                    <!-- <input type="checkbox" id="myCheckbox" class="filled-in" />
+                <label for="myCheckbox">test</label> -->
+
+
+
+                    <!-- <li> -->
+
+
+
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header white-text">
+                                <i class="material-icons">expand_more
+                                </i>Step 1: What Should Be Counted Towards Income?</div>
+                            <div class="collapsible-body">
+                                <!-- <span>Lorem ipsum dolor sit amet.</span> -->
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" id="ss" name="ss" value="1" checked="">
+                                        <label class="black-text" for="ss">Social Security</label>
+                                    </li>
+
+
+                                    <li>
+                                        <input type="checkbox" id="ssi" name="ssi" value="1" checked="">
+                                        <label class="black-text" for="ssi">Supplemental Security Income</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="uc" name="uc" value="1" checked="">
+                                        <label class="black-text" for="uc">Unemployment Compensation</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="welfare" name="welfare" value="1" checked="">
+                                        <label class="black-text" for="welfare">Welfare (TANF)</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="veterans" name="veterans" value="1" checked="">
+                                        <label class="black-text" for="veterans">Veteran's Benefits</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="snap" name="snap" value="1" checked="">
+                                        <label class="black-text" for="snap">Food Stamps (SNAP)</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="schoollunch" name="schoollunch" value="1" checked="">
+                                        <label class="black-text" for="schoollunch">Free/Subsidized School Lunch</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="wic" name="wic" value="1" checked="">
+                                        <label class="black-text" for="wic">Women, Infants, &amp; Children (WIC)</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="housing" name="housing" value="1" checked="">
+                                        <label class="black-text" for="housing">Housing Subsidies (e.g. Section 8)</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="energy" name="energy" value="1" checked="">
+                                        <label class="black-text" for="energy">Home Energy Subsidies (e.g. LIHEAP)</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="eitc" name="eitc" value="1" checked="">
+                                        <label class="black-text" for="eitc">Earned Income Tax Credit</label>
+                                    </li>
+
+                                    <li>
+                                        <input type="checkbox" id="ctc" name="ctc" value="1" checked="">
+                                        <label class="black-text" for="ctc">Child Tax Credit</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="marketincome" name="marketincome" value="1" checked="">
+                                        <label class="black-text" for="marketincome">Market Income</label>
+                                    </li>
+                                </ul>
+                                <br>
+                                <button class="btn waves-effect waves-light btn-small ppp-red" onclick="uncheckall(0, 12, 1);return false;">Uncheck All</button>
+                                <button class="btn waves-effect waves-light btn-small ppp-red" onclick="checkall(0, 12, 1);return false;">Check All</button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- </li>   -->
+
+
+
+
+
+                </div>
+                <div class="col l6 m12 s12">
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header white-text">
+                                <i class="material-icons">expand_more</i>Step 2: What Should Be Subtracted From Income?</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" id="incometax" name="incometax" value="1" checked="">
+                                        <label class="black-text" for="incometax">Federal Income Tax</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="payrolltax" name="payrolltax" value="1" checked="">
+                                        <label class="black-text" for="payrolltax">Federal Payroll Tax</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="statetax" name="statetax" value="1" checked="">
+                                        <label class="black-text" for="statetax">State Taxes</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="childsupportpaid" name="childsupportpaid" value="1" checked="">
+                                        <label class="black-text" for="childsupportpaid">Child Support Paid</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="moop" name="moop" value="1" checked="">
+                                        <label class="black-text" for="moop">Medical Out-of-Pocket Expenses</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="childandwork" name="childandwork" value="1" checked="">
+                                        <label class="black-text" for="childandwork">Child Care &amp; Work-Related Expenses</label>
+                                    </li>
+                                </ul>
+                                <br>
+                                <button class="btn waves-effect waves-light btn-small ppp-red" onclick="uncheckall(15, 20, 2);return false;">Uncheck All</button>
+                                <button class="btn waves-effect waves-light btn-small ppp-red" onclick="checkall(15, 20, 2);return false;">Check All</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l6 m12 s12">
+                    <!-- <h2> Step 3: What Poverty Line/Unit Should Be Used? </h2> -->
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header white-text">
+                                <i class="material-icons">expand_more</i>Step 3: What Poverty Line/Unit Should Be Used?</div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="povline" name="povline" value="spm100" checked="" onclick="unopmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline">Supplemental Poverty Line</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="povline2" name="povline" value="spm50" onclick="unopmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline2">Supplemental Deep Poverty Line (50% of Supplemental Poverty Line)</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="povline3" name="povline" value="spm150" onclick="unopmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline3">Supplemental Poverty Line</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="povline4" name="povline" value="opm100" onclick="opmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline4">Official Poverty Line</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="povline5" name="povline" value="opm50" onclick="opmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline5">Official Deep Poverty Line (50% of Official Poverty Line)</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="povline6" name="povline" value="opm150" onclick="opmdisable(6, 12, 15, 20, 3);">
+                                        <label class="black-text" for="povline6">Official Near Poverty Line (150% of Official Poverty Line)</label>
+                                    </li>
+                                </ul>
+                                <p>*Note: Selecting the Official Poverty Lines disables the variables that the Official Poverty
+                                    Metric ignores.</p>
+                            </div>
+                </div>
+                </li>
+                </ul>
+
+                <div class="col l6 m12 s12">
+                    <!-- <h2> Step 4: What Year Should the Poverty Data Come From? </h2> -->
+
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header white-text">
+                                <i class="material-icons">expand_more</i>Step 4: What Year Should the Poverty Data Come From?</div>
+                            <div class="collapsible-body">
+
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="year2014" name="year" value="2014" checked="">
+                                        <label class="black-text" for="year2014">2014</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="year2013" name="year" value="2013">
+                                        <label class="black-text" for="year2013">2013</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="year2012" name="year" value="2012">
+                                        <label class="black-text" for="year2012">2012</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="year2011" name="year" value="2011">
+                                        <label class="black-text" for="year2011">2011</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="year2010" name="year" value="2010">
+                                        <label class="black-text" for="year2010">2010</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="year2009" name="year" value="2009">
+                                        <label class="black-text" for="year2009">2009</label>
+                                    </li>
+                                </ul>
+                            </div>
+                </div>
+                <br>
+
+            </div>
+            </li>
+            </ul>
+            <button class="btn waves-effect waves-light ppp-red">
+                <input type="submit" value="Recalculate" name="action">
+            </button>
+        </form>
+        <!-- Disable non-OPM variables if OPM selected from prior query -->
+        <script>
+            if ("spm" == "opm") {
+                opmdisable(6, 12, 15, 20, 3);
+            }
+        </script>
+        <hr>
+        <style>
+            table {
+                border-spacing: 5px;
+            }
+        </style>
+        <!-- <h1>Poverty Calculation</h1> -->
+
+        <!-- <div class="row">
+            <div class="col l12 m12 s12">
+                <div class="card ppp-red darken-1 white-text">
+                    <div class="card-content white-text"> -->
+        <!-- <span class="card-title">Poverty Calculation</span> -->
+        <!-- <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p> -->
+
+        <!-- <div class="card-action">
+                      <a href="#">This is a link</a>
+                      <a href="#">This is a link</a>
+                    </div> -->
+        <ul id="task-card" class="collection with-header">
+            <li class="collection-header">
+                <h4 class="task-card-title white-text">Poverty Calculation</h4>
+            </li>
+            <li class="collection-item dismissable">
+
+
+
+                <table class="black-text">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>Overall</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>48.320 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>15.3%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Race</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>White</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>20.875 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>10.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>43.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Age</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>0-17</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>3.665 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>9.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>7.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>13.054 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>10.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>27.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>65+</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>4.156 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>11.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>8.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Hispanic</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>14.124 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>25.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>29.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Age</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>0-17</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>4.872 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>26.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>10.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>8.251 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>24.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>17.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>65+</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>1.001 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>27.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>2.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Black</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>8.914 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>23.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>18.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Age</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>0-17</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>2.657 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>26.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>5.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>5.334 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>21.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>11.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>65+</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>0.923 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>23.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>1.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Asian</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>2.908 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>16.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>6.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Multi-Racial</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>0.798 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>13.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>1.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Native</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>0.477 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>19.3%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>1.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Pacific Islander</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>0.224 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>22.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>0.5%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Sex</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Female</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>25.858 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>16.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>53.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Race</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>White</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>11.291 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>11.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>23.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Hispanic</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>7.245 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>26.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>15.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Black</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>4.949 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>24.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>10.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Male</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>22.462 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>14.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>46.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Race</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>White</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>9.584 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>10.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>19.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Hispanic</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>6.879 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>24.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>14.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Black</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>3.965 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>21.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>8.2%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Age</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>0-17</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>12.326 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>16.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>25.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>0-5</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>4.428 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>18.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share
+                            </td>
+                            <td>9.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>6-17</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount
+                            </td>
+                            <td>7.899 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate
+                            </td>
+                            <td>15.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share
+                            </td>
+                            <td>16.3%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>29.357 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>15.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>60.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-24</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>6.679 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>22.2%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>13.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>25-34</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>6.321 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>14.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>13.1%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>35-44</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>5.123 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>12.8%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>10.6%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>45-54</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>5.569 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>13.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>11.5%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>55-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>5.664 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>14.0%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>11.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>65+</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>6.637 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>14.4%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>13.7%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Disability</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Disabled</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Amount</td>
+                            <td>6.709 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Rate</td>
+                            <td>22.7%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty Share</td>
+                            <td>13.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Age</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>18-64</b>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Amount
+                            </td>
+                            <td>3.991 million</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Rate
+                            </td>
+                            <td>25.9%</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Poverty
+                                Share
+                            </td>
+                            <td>8.3%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+
+        </ul>
+        <!-- </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Minified jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Local JS file -->
+    <script src="assets/javascript/local.js"></script>
+
+
+</body>
+
+
+</html>

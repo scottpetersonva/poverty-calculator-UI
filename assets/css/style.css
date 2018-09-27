@@ -1,0 +1,59 @@
+.ppp-red {
+    background-color: #b5181a;
+}
+
+.ppp-red-text {
+    color: #b5181a;
+}
+
+.collapsible-header {
+    background-color: #b5181a
+}
+
+
+#mobile-demo {
+    background-color: black;
+}
+
+[type="checkbox"]:checked+label:before {
+    top: -4px;
+    left: -5px;
+    width: 12px;
+    height: 22px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #b5181a;
+    border-bottom: 2px solid #b5181a;
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #b5181a;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid #b5181a;
+}
+
+.btn-floating:hover {
+    background-color: #705252;
+  }
+
+  .btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #705252;
+  }
+
+   .btn:focus{ 
+    background-color: #705252 
+  }
+
+  .collection.with-header .collection-header {
+    background-color: #b5181a;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 20px;
+}
