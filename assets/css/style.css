@@ -19,6 +19,10 @@
     font-size: 24px;
 }
 
+.link-underline {
+    text-decoration: overline;
+}
+
 [type="checkbox"]:checked+label:before {
     top: -4px;
     left: -5px;
