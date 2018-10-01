@@ -10,6 +10,14 @@
     background-color: #b5181a
 }
 
+.row-spacing {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.btn-margin {
+    margin-left: 25px;
+}
 
 #mobile-demo {
     background-color: black;
